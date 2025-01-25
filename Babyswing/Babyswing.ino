@@ -52,18 +52,21 @@ void setup() {
   Serial.begin(19200); // Open Serial Output
   analogReadResolution(9); //Resolution of 9 Bits (0-511) instead of the default 12
   Serial.println();
-  Serial.println("Babyschaukel by Waschi. ;) - 01/2025");
+  Serial.println("Babyschaukel v0.1 by Waschi. ;) - 01/2025");
   Serial.println();
   Herz();
 }
 
 int readpoti(){ //read from the Potetiometers analogpin an returns a delay value
   int potivalue=analogRead(POTI_PIN);  
-  float percentage = 1.0 / 511 * potivalue; // calculate percentage  
+  float percentage = 1.0 / 511 * potivalue; // calculate percentage
   int range=MAXDELAY-MINDELAY;
   int calcdelay=(int)(MAXDELAY-(percentage*(float)range)); //calculate delay based on range and Poti-percentage. (Poti left => more delay)
+  /*
+  //DEBUG
   Serial.print("Current delay is: ");
   Serial.println(calcdelay);
+  */
 
   return calcdelay;
 }
@@ -94,7 +97,7 @@ void Herz(){
   Serial.println("            ;          ");
   Serial.println("           '           ");  
   Serial.println();
-  Serial.println();
+  Serial.println("Sleep well...");
 }
 
 void loop() {  
