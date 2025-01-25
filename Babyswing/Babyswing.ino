@@ -97,26 +97,20 @@ void Herz(){
   Serial.println();
 }
 
-void loop() {
-  int delaycur=readpoti();
-   
+void loop() {  
+  int delaycur=readpoti(); //This takes a few ms, which is why it's not called from within the for-loops. Downside is, that it is getting updated only ofter one half-cycle
+  
   // rotates from 0 degrees to MAXANGLE degrees
   for (int pos = 0; pos <= MAXANGLE; pos += 1) {
     // in steps of 1 degree
-    /*
-    Serial.print("Setting motor to angle: ");
-    Serial.println(pos);
-    */
     servoMotor.write(pos);    
     delay(delaycur); // waits 15ms to reach the position
   }
 
-  // rotates from MAXANGLE degrees to 0 degrees
-  for (int pos = MAXANGLE; pos >= 0; pos -= 1) {
-    /*
-     Serial.print("Setting motor to angle: ");
-    Serial.println(pos);
-    */
+  delaycur=readpoti(); //This takes a few ms, which is why it's not called from within the for-loops. Downside is, that it is getting updated only ofter one half-cycle
+
+  // rotates back from MAXANGLE degrees to 0 degrees
+  for (int pos = MAXANGLE; pos >= 0; pos -= 1) {    
     servoMotor.write(pos);
     delay(delaycur); // waits a few ms to reach the position
   }
