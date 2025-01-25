@@ -53,6 +53,7 @@ void setup() {
   analogReadResolution(9); //Resolution of 9 Bits (0-511) instead of the default 12
   Serial.println();
   Serial.println("Babyschaukel v0.1 by Waschi. ;) - 01/2025");
+  Serial.println("https://github.com/derco0n/ESPBabySwing");
   Serial.println();
   Herz();
 }
