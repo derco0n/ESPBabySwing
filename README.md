@@ -3,10 +3,15 @@ This is an Adruino-sketch (to be used e.g. with an ESP32-Devkit) which will driv
 This can be used to move a babyswing back and forth and may help them sleep...
 
 This comes without any warranty.
+
 USE AT YOUR OWN RISK.
-ALWAYS KEEP AN EYE ON YOUR BABY.
+
+ALWAYS KEEP AN EYE ON YOUR CHILD!
 
 Take care!
+
+# Connecting:
+![Wiring diagram using an ESP32](wiring-diagram.png)
 
 ## Pins used:
 - GPIO 25: Input Potentiometer
